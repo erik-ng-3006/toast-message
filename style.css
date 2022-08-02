@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+:root {
+	--success: rgb(52, 235, 134);
+	--info: rgb(52, 110, 235);
+	--warning: rgb(235, 186, 52);
+	--error: #fc0b03;
+}
+
+html {
+	font-family: 'Poppins', sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+	background-color: rgb(234, 234, 234);
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn {
+	border: none;
+	padding: 1rem 2rem;
+	font-size: 2rem;
+	border-radius: 2rem;
+	color: #fff;
+}
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn--success {
+	background-color: var(--success);
+	margin-right: 2rem;
+}
+.btn--warning {
+	background-color: var(--warning);
+}
+.btn--error {
+	background-color: var(--error);
+}
+
+#toast-container {
+	position: fixed;
+	top: 1.5rem;
+	right: 1.5rem;
+}
+
+.toast {
+	padding: 2rem;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	z-index: 99999;
+	min-width: 40rem;
+	max-width: 45rem;
+	/* animation: slideInLeft 0.3s ease-out, fadeOut 0.3s ease-out 3s forwards; */
+
+	transition: all 0.3s ease-out;
+}
+
+.toast__body {
+	flex-grow: 1;
+}
+
+.toast--success {
+	border-left: 5px solid var(--success);
+}
+
+.toast--info {
+	border-left: 5px solid var(--info);
+}
+.toast--warning {
+	border-left: 5px solid var(--warning);
+}
+.toast--error {
+	border-left: 5px solid var(--error);
+}
+
+.toast__title {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.toast__text {
+	font-size: 1.2rem;
+	color: gray;
+	margin-right: 4rem;
+}
+
+.toast__icon {
+	margin-right: 2rem;
+	font-size: 2.5rem;
+}
+.toast__icon--success {
+	color: var(--success);
+}
+.toast__icon--info {
+	color: var(--info);
+}
+.toast__icon--warning {
+	color: var(--warning);
+}
+.toast__icon--error {
+	color: var(--error);
+}
+
+.toast__close {
+	color: gray;
+	font-size: 2.5rem;
+}
+
+.toast__close:hover {
+	cursor: pointer;
+}
+
+@keyframes slideInLeft {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
